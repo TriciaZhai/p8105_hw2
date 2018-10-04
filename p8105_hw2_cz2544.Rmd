@@ -74,7 +74,7 @@ rounds the number of sports balls to the nearest integer and converts the result
 ```{r read_excel}
 library(readxl)
 tw_data = 
-  read_excel("./HealthyHarborWaterWheelTotals2017-9-26.xlsx", range = cell_cols(1:14)) %>% 
+  read_excel("./HealthyHarborWaterWheelTotals2018-7-28.xlsx", range = cell_cols(1:14)) %>% 
   janitor::clean_names() %>% 
   filter(!is.na(dumpster)) %>% 
   mutate(sports_balls = as.integer(round(sports_balls)))
@@ -87,11 +87,11 @@ Next, combine datasets and convert month to a character variable (the variable m
 ```{r read_excel_omit_add_convert}
 library(readxl)
 preci_2016 = 
-  read_excel("./HealthyHarborWaterWheelTotals2017-9-26.xlsx", sheet = 4, range = "A2:B14") %>% 
+  read_excel("./HealthyHarborWaterWheelTotals2018-7-28.xlsx", sheet = 4, range = "A2:B14") %>% 
   janitor::clean_names() %>% 
   mutate(year = 2016)
 preci_2017 =
-  read_excel("./HealthyHarborWaterWheelTotals2017-9-26.xlsx", sheet = 3, range = "A2:B14") %>% 
+  read_excel("./HealthyHarborWaterWheelTotals2018-7-28.xlsx", sheet = 3, range = "A2:B14") %>% 
   janitor::clean_names() %>% 
   mutate(year = 2017)
 
